@@ -14,6 +14,7 @@ const getProductData = () => {
     return JSON.parse(jsonData)    
 }
 
+<<<<<<< HEAD
    //Agregar nuevo producto
   productRoutes.post('/product/add', (req, res) => {
     var existProducts = getProductData()
@@ -42,6 +43,21 @@ productRoutes.get('/admin/product/:sku', (req, res) => {
     res.send({success: true, msg: 'Producto creado con exito'})
 })
 >>>>>>> postweb/insertarproducto
+=======
+// Borrar (Metodo Delete)
+productRoutes.delete('/product/delete/:sku', (req, res) => {
+    fs.readFile(dataPath, 'utf8', (err, data) => {
+     var existProducts = getProductData()
+ 
+     const productSku = req.params['sku'];
+ 
+     delete existProducts[productSku];  
+     saveProductData(existProducts);
+     res.send(`El producto de SKU (${productSku}) ha sido eliminado`)
+   }, true);
+ })
+ 
+>>>>>>> deleteweb/eliminarproducto
    
 
 
