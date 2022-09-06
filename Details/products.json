@@ -1,0 +1,26 @@
+{
+  "22222": {
+    "name": "Camiseta Deportiva",
+    "precio": 100000,
+    "url": "/images/camiseta-deportiva.jpg",
+    "marca": "Nike",
+    "iva": 0.19,
+    "inventario": 10
+  },
+  "33333": {
+    "name": "Pantalon Deportivo",
+    "precio": 150000,
+    "url": "/images/pantalon-deportivo.jpg",
+    "marca": "Nike",
+    "iva": 0.19,
+    "inventario": 7
+  },
+  "111111": {
+    "name": "Tenis Running",
+    "precio": 340000,
+    "url": "/images/tenis-running.jpg",
+    "marca": "Nike",
+    "iva": 0.19,
+    "inventario": 6
+  }
+}

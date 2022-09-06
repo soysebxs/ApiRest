@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "fname": "Jairo",
+        "sname": "Pimentel",
+        "total": 450000,
+        "products": [
+            "95484",
+            "64854"
+        ]
+    },
+    {
+        "id": 2,
+        "fname": "Oscar",
+        "sname": "Salas",
+        "total": 670000,
+        "products": [
+            
+            "98451",
+            "21584"
+        ]
+    },
+    {
+        "id": 3,
+        "fname": "Cristian",
+        "sname": "Arango",
+        "total": 440000,
+        "products": [
+            "44864",
+            "65878"
+        ]
+    }
+]
