@@ -14,31 +14,6 @@ const getProductData = () => {
     return JSON.parse(jsonData)    
 }
 
-
-// Lista todos los productos
-productRoutes.get('/admin/product', (req, res) => {
-    fs.readFile(dataPath, 'utf8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-      res.send(JSON.parse(data));
-    });
-  });
-
-// Lista de un producto
-productRoutes.get('/admin/product/:sku', (req, res) => {
-    const {sku} = req.params;
-     res.json({
-       sku,
-       name: 'Tenis Running',
-       precio: 300000,
-       url: '/images/tenis-running.jpg',
-       marca: 'Nike',
-       iva: 0.19,
-       inventario: 1
-     });
-   });
-
    //Agregar nuevo producto
   productRoutes.post('/product/add', (req, res) => {
     var existProducts = getProductData()
