@@ -14,17 +14,18 @@ const getProductData = () => {
     return JSON.parse(jsonData)    
 }
 
-// Actualizar (Metodo Put)
-productRoutes.put('/product/:sku', (req, res) => {
-    var existProducts = getProductData()
+// Borrar (Metodo Delete)
+productRoutes.delete('/product/delete/:sku', (req, res) => {
     fs.readFile(dataPath, 'utf8', (err, data) => {
-     const productSku = req.params['sku'];
-     existProducts[productSku] = req.body;
+     var existProducts = getProductData()
  
+     const productSku = req.params['sku'];
+ 
+     delete existProducts[productSku];  
      saveProductData(existProducts);
-     res.send(`El producto de id (${productSku}) se actualizó correctamente`)
+     res.send(`El producto de SKU (${productSku}) ha sido eliminado`)
    }, true);
- });
+ })
  
    
 
