@@ -14,18 +14,18 @@ const getProductData = () => {
     return JSON.parse(jsonData)    
 }
 
-   //Agregar nuevo producto
-  productRoutes.post('/product/add', (req, res) => {
+// Actualizar (Metodo Put)
+productRoutes.put('/product/:sku', (req, res) => {
     var existProducts = getProductData()
-    const newProductSku = Math.floor(100000 + Math.random() * 900000)
-   
-    existProducts[newProductSku] = req.body
-     
-    console.log(existProducts);
-
-    saveProductData(existProducts);
-    res.send({success: true, msg: 'Producto creado con exito'})
-})
+    fs.readFile(dataPath, 'utf8', (err, data) => {
+     const productSku = req.params['sku'];
+     existProducts[productSku] = req.body;
+ 
+     saveProductData(existProducts);
+     res.send(`El producto de id (${productSku}) se actualizó correctamente`)
+   }, true);
+ });
+ 
    
 
 module.exports = productRoutes
