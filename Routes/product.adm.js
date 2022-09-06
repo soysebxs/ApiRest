@@ -15,16 +15,6 @@ const getProductData = () => {
 }
 
 
-// Lista todos los productos
-productRoutes.get('/admin/product', (req, res) => {
-    fs.readFile(dataPath, 'utf8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-      res.send(JSON.parse(data));
-    });
-  });
-
 // Lista de un producto
 productRoutes.get('/admin/product/:sku', (req, res) => {
     const {sku} = req.params;
@@ -39,5 +29,6 @@ productRoutes.get('/admin/product/:sku', (req, res) => {
      });
    });
    
+
 
 module.exports = productRoutes
