@@ -38,6 +38,19 @@ productRoutes.get('/admin/product/:sku', (req, res) => {
        inventario: 1
      });
    });
+
+   //Agregar nuevo producto
+  productRoutes.post('/product/add', (req, res) => {
+    var existProducts = getProductData()
+    const newProductSku = Math.floor(100000 + Math.random() * 900000)
+   
+    existProducts[newProductSku] = req.body
+     
+    console.log(existProducts);
+
+    saveProductData(existProducts);
+    res.send({success: true, msg: 'Producto creado con exito'})
+})
    
 
 module.exports = productRoutes
