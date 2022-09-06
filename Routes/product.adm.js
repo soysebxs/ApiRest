@@ -14,7 +14,16 @@ const getProductData = () => {
     return JSON.parse(jsonData)    
 }
 
+   //Agregar nuevo producto
+  productRoutes.post('/product/add', (req, res) => {
+    var existProducts = getProductData()
+    const newProductSku = Math.floor(100000 + Math.random() * 900000)
+   
+    existProducts[newProductSku] = req.body
+     
+    console.log(existProducts);
 
+<<<<<<< HEAD
 // Lista de un producto
 productRoutes.get('/admin/product/:sku', (req, res) => {
     const {sku} = req.params;
@@ -28,6 +37,11 @@ productRoutes.get('/admin/product/:sku', (req, res) => {
        inventario: 1
      });
    });
+=======
+    saveProductData(existProducts);
+    res.send({success: true, msg: 'Producto creado con exito'})
+})
+>>>>>>> postweb/insertarproducto
    
 
 
