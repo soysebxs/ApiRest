@@ -15,13 +15,16 @@ Dentro del desarrollo se usó
 - GIT
 - JSON Viewer (Extensión de Chrome para visualizar mejor los archivos JSON)
 
-1. Instalar dependencias
+# Uso del ApiRest
+1. Descargar el repositorio de GitHub
+
+2. Instalar dependencias
 
 ```bash
 npm install
 ```
 
-2. Correr el servidor
+3. Correr el servidor
 
 ```bash
 node app.js
